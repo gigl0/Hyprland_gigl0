@@ -1,0 +1,106 @@
+exec-once = waybar &
+exec-once = hyprpaper &
+exec-once = nm-applet &
+exec-once = mako &
+exec-once = nm-applet --indicator
+exec-once = wl-paste --watch cliphist
+exec-once = ~/.config/waybar/scripts/start-ncspot.sh
+$terminal = kitty
+
+# Example keybinds
+$mainMod = SUPER
+
+bind = $mainMod, Z, exec, kitty
+bind = $mainMod, Q, killactive
+bind = $mainMod SHIFT, R, exec, hyprctl reload
+
+
+# Avvia il file manager (es. PCManFM)
+bind = SUPER, E, exec, pcmanfm
+
+# Cambia workspace
+bind = SUPER, 1, workspace, 1
+bind = SUPER, 2, workspace, 2
+bind = SUPER, 3, workspace, 3
+bind = SUPER, 4, workspace, 4
+bind = SUPER, 5, workspace, 5
+bind = SUPER, 6, workspace, 6
+bind = SUPER, 7, workspace, 7
+bind = SUPER, 8, workspace, 8
+bind = SUPER, 9, workspace, 9
+
+# Sposta finestra nel workspace
+bind = SUPER SHIFT, 1, movetoworkspace, 1
+bind = SUPER SHIFT, 2, movetoworkspace, 2
+bind = SUPER SHIFT, 3, movetoworkspace, 3
+bind = SUPER SHIFT, 4, movetoworkspace, 4
+bind = SUPER SHIFT, 5, movetoworkspace, 5
+bind = SUPER SHIFT, 6, movetoworkspace, 6
+bind = SUPER SHIFT, 7, movetoworkspace, 7
+bind = SUPER SHIFT, 8, movetoworkspace, 8
+bind = SUPER SHIFT, 9, movetoworkspace, 9
+
+bind = SUPER, C, exec, /bin/chromium-fumate.sh
+
+bind = SUPER, F, fullscreen
+
+# Sposta il focus tra le finestre adiacenti
+bind = SUPER, Left, movefocus, l
+bind = SUPER, Right, movefocus, r
+bind = SUPER, Up, movefocus, u
+bind = SUPER, Down, movefocus, d
+
+# Muovi la finestra attiva nella direzione indicata
+bind = SUPER SHIFT, Left, movewindow, l
+bind = SUPER SHIFT, Right, movewindow, r
+bind = SUPER SHIFT, Up, movewindow, u
+bind = SUPER SHIFT, Down, movewindow, d
+
+# Volume su (con Super + F12)
+bind = SUPER, F12, exec, pamixer -i 5
+
+# Volume giù (con Super + F11)
+bind = SUPER, F11, exec, pamixer -d 5
+
+# Muto (con Super + F10)
+bind = SUPER, F10, exec, pamixer -t
+
+# Luminosità su (Super + PgUp)
+bind = SUPER, Page_Up, exec, brightnessctl set +5%
+
+# Luminosità giù (Super + PgDn)
+bind = SUPER, Page_Down, exec, brightnessctl set 5%-
+
+input {
+	kb_layout = it
+}
+
+animations{
+	enabled = true
+}
+
+
+decoration {
+	rounding = 7
+}
+
+general{
+	border_size = 2
+	gaps_in = 3
+	gaps_out = 3
+}
+
+env = WLR_DRM_NO_ATOMIC, 1
+
+#workspace
+workspace = 1
+workspace = 2
+workspace = 3
+workspace = 4
+workspace = 5
+workspace = 6
+workspace = 7
+workspace = 8
+workspace = 9
+
+exec-once = hyprctl dispatch workspace 1; kitty
