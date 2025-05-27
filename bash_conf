@@ -1,0 +1,23 @@
+#
+# ~/.bashrc
+#
+
+# If not running interactively, don't do anything
+[[ $- != *i* ]] && return
+
+alias ls='ls --color=auto'
+alias grep='grep --color=auto'
+alias chrome='chromium'
+alias install='sudo pacman -S'
+alias ..='cd ..'
+alias myip='curl ifconfig.me'
+alias speed='speedtest-cli'
+alias meteo='curl wttr.in/torino'
+alias ytv='mpv --ytdl-format="bestvideo[height<=480]+bestaudio"'
+alias brucato='streamlink -p mpv https://www.twitch.tv/simone_brucato 720p60'
+alias nanni='streamlink -p mpv https://www.twitch.tv/nannitwitch 480p'
+alias restart-waybar="pkill waybar && waybar &"
+alias retroarch='env SDL_VIDEODRIVER=x11 retroarch'
+alias spoti='tmux new-session -s ncspot ncspot'
+alias spotix='tmux kill-session -t ncspot'
+PS1='[\u@\h \W]\$ '

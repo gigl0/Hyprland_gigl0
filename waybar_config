@@ -1,0 +1,62 @@
+{
+  "layer": "top",
+  "position": "top",
+  "modules-left": ["cpu", "memory","custom/ncspot"],
+  "modules-center": ["clock","wlr/workspaces"],
+  "modules-right": ["network", "battery", "pulseaudio","backlight"],
+
+"wlr/workspaces": {
+  "format": "{name}"  // usa name al posto di icon
+},
+
+"custom/ncspot": {
+  "format": "{}",
+  "interval": 5,
+  "max-length": 30,
+  "exec": "~/.config/waybar/scripts/ncspot-status.sh",
+  "on-click": "tmux send-keys -t ncspot Space", // pausa/play
+  "on-scroll-up": "tmux send-keys -t ncspot n", // avanti
+  "on-scroll-down": "tmux send-keys -t ncspot p" // indietro
+},
+
+  "cpu": {
+    "format": "CPU {usage}%",
+    "interval": 3
+  },
+
+  "memory": {
+    "format": "RAM {used:0.1f}G",
+    "interval": 5
+  },
+
+  "network": {
+    "format-wifi": "📶{essid}",
+    "format-ethernet": "ETH {ifname}",
+    "format-disconnected": "nada connession",
+    "interval": 5
+  },
+
+  "battery": {
+    "format": "🔋 {capacity}%",
+    "format-charging": " {capacity}%",
+    "interval": 30
+  },
+
+  "pulseaudio": {
+    "format": "🔊{volume}%",
+    "format-muted": "🔇 no audio"
+  },
+
+  "clock": {
+    "format": " {:%H:%M}",
+    "interval": 60
+  },
+
+  "backlight": {
+    "device": "radeon_bl0",
+    "format": "{icon} {percent}%",
+    "format-icons": ["🌑", "🌘", "🌗", "🌖", "🌕"]
+  }
+}
+
+
